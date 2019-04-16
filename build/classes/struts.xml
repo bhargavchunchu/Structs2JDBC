@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	
+	<package name="default" namespace="/" extends="struts-default">
+	  		
+		<action name="ForgotAction" class="com.ron.Action.ForAction" method="execute">
+			<result name="success">/fpassword.jsp</result>
+			<result name="error">/register.jsp</result>
+		</action>
+		
+	
+	       <action name="LoginAction" class="com.ron.Action.OnlyAction" method="loginMethod">
+			  <result name="success">/Userdashboard.jsp</result>
+			  <result name="login">/Vendordashboard.jsp</result>
+			  <result name="none">/admindashboard.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="RegistrAction" class="com.ron.Action.OnlyAction" method="registerMethod">
+			<result name="success">/login.jsp</result>
+			<result name="error">/register.jsp</result>
+		</action>
+		
+	
+		<action name="BusinessAction" class="com.ron.Action.BAction" method="BusinessRegMethod">
+			<result name="success">/Vendordashboard.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="logOut" class="com.ron.Action.OnlyAction" method="logOut">
+			<result name="sucess">/login.jsp</result>
+		</action>
+		
+	</package>
+</struts>
